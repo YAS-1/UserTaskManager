@@ -11,8 +11,8 @@ function LoginPage() {
             <HStack gap={"0px"}>
                 <Box border={"solid"} rounded={"xl"} borderColor={"blue.50"} minW={"1/2"} minH={"550px"} bgGradient="to-b"gradientFrom={"blue.200"}gradientVia={"pink.200"}gradientTo={"blue.300"} paddingX={"50px"} paddingY={"50px"}>
                         <Box paddingY={"50px"} border={"solid"} paddingX={"20px"} borderWidth={"1px"} rounded={"xl"} bgGradient="to-r" gradientFrom={"whiteAlpha.200"}gradientTo={"blue.200"}>
-                                <Heading as={"h1"} display={{base:"none",md:"none", lg:"block"}} fontSize={{base:"hidden", sm:"80px", lg:"100px"}}>
-                                        Task<Text  fontSize={{base:"sm", sm:"80px", lg:"100px"}} color={"black"}>Manager.</Text>
+                                <Heading as={"h1"} display={{base:"none",md:"none", lg:"block"}} fontSize={{base:"hidden", sm:"80px", lg:"100px"}} fontWeight={"semibold"}>
+                                        Task<Text  fontSize={{base:"sm", sm:"80px", lg:"100px"}} color={"black"} fontWeight={"semibold"}>Manager.</Text>
                                 </Heading>
                                 <Box padding={"20px"} marginTop={"25px"}>
                                     <Text fontSize={{base:"x-small" , sm:"lg", lg:"2xl"}} fontFamily={"cursive"}>Welcome to Task Manager</Text>
@@ -43,6 +43,7 @@ function LoginPage() {
                                     borderColor={"gray.600"}
                                     color={"blackAlpha.900"}
                                     width={{base:"250px", md:"300px", lg:"500px"}}
+                                    padding={"10px"}
                                     rounded={"lg"}
                                     required
                                     />
@@ -55,13 +56,14 @@ function LoginPage() {
                                     borderColor={"gray.600"}
                                     color={"blackAlpha.900"}
                                     width={{base:"250px", md:"300px", lg:"500px"}}
+                                    padding={"10px"}
                                     rounded={"lg"}
                                     required
                                     />
                                 <Box>
                                     <Flex justify={"center"} align={"center"} gap={10}>
                                         <VStack gap={5}>
-                                            <Button paddingY={"5px"} paddingX={"10px"} rounded={"xl"} border={"solid"} borderWidth={"1px"} borderColor={"white"} width={{base:"250px", md:"300px", lg:"500px"}} fontSize={{base:"sm", md:"lg"}} bgGradient= "to-r"gradientFrom={"blue.300"}gradientVia={"blue.500"}gradientTo={"purple.300"} color={"white"}>
+                                            <Button paddingY={"5px"} paddingX={"10px"} rounded={"xl"} border={"solid"} borderWidth={"1px"} borderColor={"white"} width={{base:"250px", md:"300px", lg:"500px"}} fontSize={{base:"sm", md:"lg"}} bgGradient= "to-r"gradientFrom={"blue.300"}gradientVia={"blue.500"}gradientTo={"purple.300"} color={"black"} fontWeight={"semibold"}>
                                                 Login
                                             </Button>
                                             <Text fontSize={{base:"x-small", md:"lg"}} color={"blackAlpha.900"}>
