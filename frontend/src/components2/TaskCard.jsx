@@ -6,10 +6,10 @@ import { BorderBeam } from "../components/ui/border-beam";
 const TaskCard = ({task}) => {
     return (
         <div
-         className=" py-2 px-2 min-w-30 relative h-[550px] w-full overflow-hidden rounded-lg md:shadow-xl bg-transparent transition duration-500 hover:-translate-y-3"
+         className=" py-2 px-2 min-w-30 relative h-[470px] w-full overflow-hidden rounded-lg md:shadow-xl bg-transparent transition duration-500 hover:-translate-y-3"
         >
             <VStack>
-                <Box p={4} minH={"380px"} minW={"400px"} bgColor={"black"} rounded={"xl"}>
+                <Box p={4} minH={"300px"} minW={"400px"} bgColor={"black"} rounded={"xl"}>
                     <Text fontSize={"xl"} fontFamily={"cursive"}>
                         {task.description}
                     </Text>
@@ -19,23 +19,20 @@ const TaskCard = ({task}) => {
                                 <Box minW={"250px"}>
                                     <Text
                                         fontWeight={"bold"}
-                                        fontSize={"xl"}
+                                        fontSize={"2xl"}
                                         md={4}
                                         fontFamily={"monospace"}
                                         >
-                                        #{task.title}{" "}
+                                        #{task.title}
                                     </Text>
                                 </Box>
                             </HStack>
                             <Box>
                                 <Text fontSize={"xl"} fontFamily={"monospace"}>
-                                    Complete: {task.completed}
+                                    Category: {task.category}
                                 </Text>
                                 <Text fontSize={"xl"} fontFamily={"monospace"}>
-                                    Complete: {task.completed}
-                                </Text>
-                                <Text fontSize={"xl"} fontFamily={"monospace"}>
-                                    Complete: {task.completed}
+                                    Due: {task.due}
                                 </Text>
                             </Box>
                         </Box>
