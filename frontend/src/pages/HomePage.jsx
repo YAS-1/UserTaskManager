@@ -11,7 +11,7 @@ import TaskCard from '@/components2/TaskCard';
 const HomePage = () => {
     return (
         <Flex align={"center"} justify={"center"} paddingY={"20px"} paddingX={"20px"}>
-            <VStack gap={10} border={"solid"} borderColor={"red"}>
+            <VStack gap={10}>
                 <Box display={{base:"none", md:"block"}} width={{base:"150px", md:"500px", lg:"850px"}}  minH={"10px"} border={"solid"} padding={"5px"} borderWidth={"1px"} rounded={"full"} boxShadow="0px 5px 5px #C0C0C0" bgColor={"#F0FFFF"} borderColor={"blue.50"} overflow={"hidden"}>
                     <HStack gap={10}>
                         <Box  minW={"400px"} padding={"10px"} fontSize={"2xl"} color={"black"} fontWeight={"bold"}><Text>Task Manager</Text></Box>
@@ -39,10 +39,10 @@ const HomePage = () => {
                         </Box>
                     </Flex>
                 </Box>
-                <Box minW={"80vw"} border={"solid"} borderColor={"black"} paddingX={"10px"} paddingY={"10px"}>
+                <Box minW={"80vw"} border={"solid"} borderColor={"#f0f6ff"} paddingX={"10px"} paddingY={"15px"} rounded={"xl"} bgColor={"#f0f6ff"}>
                     <SimpleGrid
                     columns={{base:1, md:2, lg:3}}
-                    gap={4}
+                    gap={5}
                     >
 						{tasks.map((task) => {
 							return <TaskCard key={task.id} task={task} />;
