@@ -35,6 +35,7 @@ const HomePage = () => {
                                 boxSize={"40px"}
                                 _hover={{cursor:'pointer', transform: "scale(1.1)"}}
                                 />
+                                <Text fontSize={"2xl"} color={"black"} fontWeight={"bold"}>Create Task</Text>
                             </Flex>
                         </Box>
                     </Flex>
