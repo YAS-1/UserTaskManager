@@ -1,8 +1,12 @@
-import { Flex, VStack, Box, Text, HStack, Image, Button } from '@chakra-ui/react';
+import { Flex, VStack, Box, Text, HStack, Image, Button, Icon, SimpleGrid } from '@chakra-ui/react';
 import { IoAddCircle } from "react-icons/io5";
 import React from 'react';
 
 import { image } from '../assets/images';
+import { tasks } from '@/assets/tasks';
+
+import TaskCard from '@/components2/TaskCard';
+
 
 const HomePage = () => {
     return (
@@ -23,12 +27,27 @@ const HomePage = () => {
                 </Box>
                 <Box>
                     <Flex align={"center"} justify={"center"}>
-                        <button className="bg-black size-10">
+                        <Box>
                             <Flex align={"center"} justify={"center"}>
-                                <I/>
+                                <Icon
+                                as={IoAddCircle}
+                                color={"black"}
+                                boxSize={"40px"}
+                                _hover={{cursor:'pointer', transform: "scale(1.1)"}}
+                                />
                             </Flex>
-                        </button>
+                        </Box>
                     </Flex>
+                </Box>
+                <Box minW={"80vw"} border={"solid"} borderColor={"black"} paddingX={"10px"} paddingY={"10px"}>
+                    <SimpleGrid
+                    columns={{base:1, md:2, lg:3}}
+                    gap={4}
+                    >
+						{tasks.map((task) => {
+							return <TaskCard key={task.id} task={task} />;
+						})}
+                    </SimpleGrid>
                 </Box>
             </VStack>
         </Flex>
