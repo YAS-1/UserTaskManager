@@ -7,7 +7,7 @@ import HomePage from './pages/HomePage.jsx'
 
 function App() {
   return (
-    <Box minW={"100vw"} minH={"100vh"} paddingX={"15px"} paddingY={"10px"} bgColor={"blue.50"}>
+    <Box minW={"100vw"} minH={"100vh"} paddingX={"15px"} paddingY={"10px"} bgColor={"#f0f2f5"}>
       <Routes>
         <Route path='/' element={<LoginPage/>}/>
         <Route path='/signup' element={<SignUpPage/>}/>
