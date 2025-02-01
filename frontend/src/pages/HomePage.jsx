@@ -1,4 +1,4 @@
-import { Flex, VStack, Box, Text, HStack, Image, Button, Icon, SimpleGrid } from '@chakra-ui/react';
+import { Flex, VStack, Box, Text, HStack, Image, Button, Icon, SimpleGrid, Input, Textarea } from '@chakra-ui/react';
 import { IoAddCircle } from "react-icons/io5";
 import React from 'react';
 
@@ -41,16 +41,114 @@ const HomePage = () => {
                     <Flex align={"center"} justify={"center"}>
                         <Box>
                             <Flex align={"center"} justify={"center"}>
-                                
-                                <Button boxShadow="0px 5px 5px #C0C0C0" padding={"10px"} rounded={"2xl"} bgColor={"black"}>
-                                    <Icon
-                                    as={IoAddCircle}
-                                    color={"white"}
-                                    boxSize={"20px"}
-                                    _hover={{cursor:'pointer', transform: "scale(1.1)"}}
-                                    />
-                                    <Text fontSize={"xl"} color={"white"} fontWeight={"bold"}>Create Task</Text>
-                                </Button>
+                                <DialogRoot>
+                                    <DialogTrigger asChild>
+                                        <Button boxShadow="0px 5px 5px #C0C0C0" padding={"10px"} rounded={"2xl"} bgColor={"black"}>
+                                        <Icon
+                                        as={IoAddCircle}
+                                        color={"white"}
+                                        boxSize={"20px"}
+                                        _hover={{cursor:'pointer', transform: "scale(1.1)"}}
+                                        />
+                                        <Text fontSize={"xl"} color={"white"} fontWeight={"bold"}>Create Task</Text>
+                                        </Button>
+                                    </DialogTrigger>
+                                    <DialogContent>
+                                        <DialogHeader>
+                                            <DialogTitle fontWeight={"bold"} fontSize={"xl"}>Create new Task</DialogTitle>
+                                        </DialogHeader>
+                                        <DialogBody>
+                                            <VStack gap={4}>
+                                                <Input
+                                                    type={"text"}
+                                                    placeholder={"Task name"}
+                                                    width={["250px", "450px"]}
+                                                    padding={"10px"}
+                                                    border={"solid"}
+                                                    borderWidth={"1.5px"}
+                                                    rounded={"lg"}
+                                                    height={"50px"}
+                                                    fontSize={"lg"}
+                                                    color={"whiteAlpha.700"}
+                                                    name='taskName'
+                                                    value=""
+                                                    required
+                                                />
+                                                <Textarea
+                                                    type={"text"}
+                                                    placeholder={"Task description"}
+                                                    width={["250px", "450px"]}
+                                                    padding={"10px"}
+                                                    border={"solid"}
+                                                    borderWidth={"1.5px"}
+                                                    rounded={"lg"}
+                                                    height={"200px"}
+                                                    fontSize={"lg"}
+                                                    color={"whiteAlpha.700"}
+                                                    name='taskDescription'
+                                                    value=""
+                                                    required
+                                                />
+                                                <HStack>
+                                                <Input
+                                                    type={"date"}
+                                                    placeholder={"Due"}
+                                                    width={["50px", "220px"]}
+                                                    padding={"10px"}
+                                                    border={"solid"}
+                                                    borderWidth={"1.5px"}
+                                                    rounded={"lg"}
+                                                    height={"50px"}
+                                                    fontSize={"lg"}
+                                                    color={"whiteAlpha.700"}
+                                                    name='DueDate'
+                                                    value=""
+                                                    required
+                                                />
+                                                <Input
+                                                    type={"time"}
+                                                    placeholder={"Due"}
+                                                    width={["50px", "220px"]}
+                                                    padding={"10px"}
+                                                    border={"solid"}
+                                                    borderWidth={"1.5px"}
+                                                    rounded={"lg"}
+                                                    height={"50px"}
+                                                    fontSize={"lg"}
+                                                    color={"whiteAlpha.700"}
+                                                    name='DueDate'
+                                                    value=""
+                                                    required
+                                                />
+                                                </HStack>
+                                                <Input
+                                                    type={"text"}
+                                                    placeholder={"Category"}
+                                                    width={["250px", "450px"]}
+                                                    padding={"10px"}
+                                                    border={"solid"}
+                                                    borderWidth={"1.5px"}
+                                                    rounded={"lg"}
+                                                    height={"50px"}
+                                                    fontSize={"lg"}
+                                                    color={"whiteAlpha.700"}
+                                                    name='Category'
+                                                    value=""
+                                                    required
+                                                />
+                                            </VStack>
+                                        </DialogBody>
+                                        <DialogFooter>
+                                            <VStack gap={4}>
+                                                <DialogActionTrigger>
+                                                    <Button variant={"outline"} width={["250px", "450px"]} border={"2px solid"} fontSize={"xl"} borderRadius={"8px"}>Cancel</Button>
+                                                </DialogActionTrigger>
+                                                <Button color={"white"} bgColor={"blue.600"} width={["250px", "450px"]} border={"2px solid"} fontSize={"xl"} borderRadius={"8px"}>Save</Button>
+                                            </VStack>
+                                        </DialogFooter>
+                                        <DialogCloseTrigger />
+                                    </DialogContent>
+                                </DialogRoot>
                             </Flex>
                         </Box>
                     </Flex>

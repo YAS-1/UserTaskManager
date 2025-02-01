@@ -25,9 +25,11 @@ const TaskCard = ({task}) => {
                             <input type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" onClick={handleCheckboxClick}/>
                         </span>
                     </Flex>
-                    <Text fontSize={"xl"} fontFamily={"monospace"} color={"#333333"}>
-                        {task.description}
-                    </Text>
+                    <Box>
+                        <Text fontSize={"xl"} fontFamily={"monospace"} color={"#333333"}>
+                            {task.description}
+                        </Text>
+                    </Box>
                 </Box>
                 <Box minH={"140px"} minW={"400px"} bg={"blue.400"} rounded={"xl"} paddingX={"10px"} paddingY={"10px"} boxShadow="0px 5px 5px #C0C0C0">
                             <HStack gap={"25px"}>
