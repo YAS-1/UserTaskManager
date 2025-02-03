@@ -1,6 +1,6 @@
 import { Flex, VStack, Box, Text, HStack, Image, Button, Icon, SimpleGrid, Input, Textarea } from '@chakra-ui/react';
 import { IoAddCircle } from "react-icons/io5";
-import React from 'react';
+import React, { useState } from 'react';
 
 import { image } from '../assets/images';
 import { tasks } from '@/assets/tasks';
@@ -19,8 +19,22 @@ import {
 
 import TaskCard from '@/components2/TaskCard';
 
+const {Tasks, setTasks } = useState([
+    {
+        title: "",
+        description: "",
+        category:"",
+        dueDate: "",
+        dueTime:""
+    }
+])
+
 
 const HomePage = () => {
+
+    const handleCreateTask = (e) => {
+        e.preventDefault();
+    }
     return (
         <Flex align={"center"} justify={"center"} paddingY={"20px"} paddingX={"20px"}>
             <VStack gap={10}>
