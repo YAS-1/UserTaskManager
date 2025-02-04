@@ -19,21 +19,33 @@ import {
 
 import TaskCard from '@/components2/TaskCard';
 
-const {Tasks, setTasks } = useState([
-    {
-        title: "",
-        description: "",
-        category:"",
-        dueDate: "",
-        dueTime:""
-    }
-])
-
 
 const HomePage = () => {
 
+    const [Tasks, setTasks] = useState({
+        
+            title: "",
+            description: "",
+            category:"",
+            dueDate: "",
+            time:""
+        }
+    );
+
     const handleCreateTask = (e) => {
         e.preventDefault();
+        const {name, value} = e.target;
+        setTasks((pre) => {
+            return {...pre, [name]: value}
+        });
+    }
+
+
+    const handleAddTask = (e) => {
+        e.preventDefault();
+        console.log(Tasks);
+
+
     }
     return (
         <Flex align={"center"} justify={"center"} paddingY={"20px"} paddingX={"20px"}>
@@ -75,7 +87,7 @@ const HomePage = () => {
                                             <VStack gap={4}>
                                                 <Input
                                                     type={"text"}
-                                                    placeholder={"Task name"}
+                                                    placeholder={"Task title"}
                                                     width={["250px", "450px"]}
                                                     padding={"10px"}
                                                     border={"solid"}
@@ -84,8 +96,9 @@ const HomePage = () => {
                                                     height={"50px"}
                                                     fontSize={"lg"}
                                                     color={"whiteAlpha.700"}
-                                                    name='taskName'
-                                                    value=""
+                                                    name='title'
+                                                    value={Tasks.title}
+                                                    onChange={handleCreateTask}
                                                     required
                                                 />
                                                 <Textarea
@@ -99,14 +112,15 @@ const HomePage = () => {
                                                     height={"200px"}
                                                     fontSize={"lg"}
                                                     color={"whiteAlpha.700"}
-                                                    name='taskDescription'
-                                                    value=""
+                                                    name='description'
+                                                    value={Tasks.description}
+                                                    onChange={handleCreateTask}
                                                     required
                                                 />
                                                 <HStack>
                                                 <Input
                                                     type={"date"}
-                                                    placeholder={"Due"}
+                                                    placeholder={"Due date"}
                                                     width={["50px", "220px"]}
                                                     padding={"10px"}
                                                     border={"solid"}
@@ -115,13 +129,14 @@ const HomePage = () => {
                                                     height={"50px"}
                                                     fontSize={"lg"}
                                                     color={"whiteAlpha.700"}
-                                                    name='DueDate'
-                                                    value=""
+                                                    name='dueDate'
+                                                    value={Tasks.dueDate}
+                                                    onChange={handleCreateTask}
                                                     required
                                                 />
                                                 <Input
                                                     type={"time"}
-                                                    placeholder={"Due"}
+                                                    placeholder={"Time"}
                                                     width={["50px", "220px"]}
                                                     padding={"10px"}
                                                     border={"solid"}
@@ -130,8 +145,9 @@ const HomePage = () => {
                                                     height={"50px"}
                                                     fontSize={"lg"}
                                                     color={"whiteAlpha.700"}
-                                                    name='DueDate'
-                                                    value=""
+                                                    name='time'
+                                                    value={Tasks.time}
+                                                    onChange={handleCreateTask}
                                                     required
                                                 />
                                                 </HStack>
@@ -146,8 +162,9 @@ const HomePage = () => {
                                                     height={"50px"}
                                                     fontSize={"lg"}
                                                     color={"whiteAlpha.700"}
-                                                    name='Category'
-                                                    value=""
+                                                    name='category'
+                                                    value={Tasks.category}
+                                                    onChange={handleCreateTask}
                                                     required
                                                 />
                                             </VStack>
@@ -157,7 +174,7 @@ const HomePage = () => {
                                                 <DialogActionTrigger>
                                                     <Button variant={"outline"} width={["250px", "450px"]} border={"2px solid"} fontSize={"xl"} borderRadius={"8px"}>Cancel</Button>
                                                 </DialogActionTrigger>
-                                                <Button color={"white"} bgColor={"blue.600"} width={["250px", "450px"]} border={"2px solid"} fontSize={"xl"} borderRadius={"8px"}>Save</Button>
+                                                <Button color={"white"} bgColor={"blue.600"} width={["250px", "450px"]} border={"2px solid"} fontSize={"xl"} borderRadius={"8px"} onClick={handleAddTask}>Save</Button>
                                             </VStack>
                                         </DialogFooter>
                                         <DialogCloseTrigger />

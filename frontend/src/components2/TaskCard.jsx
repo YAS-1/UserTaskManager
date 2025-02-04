@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { Box, Text, HStack, VStack, Button, CheckboxGroup, Flex } from '@chakra-ui/react';
+import { Box, Text, HStack, VStack, Button, CheckboxGroup, Flex, Input } from '@chakra-ui/react';
 import { BorderBeam } from "../components/ui/border-beam";
 import { MdUpdate } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
@@ -22,7 +22,7 @@ const TaskCard = ({task}) => {
                 <Box p={4} minH={"300px"} minW={"400px"} bgColor={"#ffffff"} rounded={"xl"} boxShadow="0px 5px 5px #C0C0C0">
                     <Flex align={"flex-end"} justify={"flex-end"}>
                         <span>
-                            <input type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" onClick={handleCheckboxClick}/>
+                            <input type="checkbox" className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" onClick={handleCheckboxClick}/>
                         </span>
                     </Flex>
                     <Box>
