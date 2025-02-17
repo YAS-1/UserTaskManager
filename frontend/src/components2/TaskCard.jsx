@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
 import { Box, Text, HStack, VStack, Button, CheckboxGroup, Flex, Input } from '@chakra-ui/react';
-import { BorderBeam } from "../components/ui/border-beam";
 import { MdUpdate } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 
@@ -46,6 +45,7 @@ const TaskCard = ({task}) => {
 							</Box>
 							<Box minW={"100px"}>
 								<HStack>
+                                    
 									<Button bgColor={"white"} width={"10px"} height={"30px"}>
 										<MdUpdate color="black" />
 									</Button>

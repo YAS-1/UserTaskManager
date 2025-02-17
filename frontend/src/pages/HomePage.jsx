@@ -215,7 +215,7 @@ const HomePage = () => {
 										</DialogBody>
 										<DialogFooter>
 											<VStack gap={4}>
-												<DialogActionTrigger>
+												<DialogActionTrigger asChild>
 													<Button
 														variant={"outline"}
 														width={["250px", "450px"]}
