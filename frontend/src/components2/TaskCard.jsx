@@ -64,6 +64,9 @@ const TaskCard = ({task}) => {
                                 <Text fontSize={"xl"} fontFamily={"monospace"} color={"black"}>
                                     Due: {task.due}
                                 </Text>
+                                <Text fontSize={"xl"} fontFamily={"monospace"} color={"black"}>
+                                    Time: {task.time}
+                                </Text>
                             </Box>
                         </Box>
             </VStack>
