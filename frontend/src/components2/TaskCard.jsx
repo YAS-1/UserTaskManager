@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { MdUpdate } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
-import PropTypes from "prop-types";
+
 
 import {
 	DialogActionTrigger,
@@ -237,16 +237,6 @@ const TaskCard = ({ task }) => {
 			</VStack>
 		</div>
 	);
-};
-
-TaskCard.propTypes = {
-	task: PropTypes.shape({
-		title: PropTypes.string.isRequired,
-		description: PropTypes.string.isRequired,
-		category: PropTypes.string.isRequired,
-		due: PropTypes.string.isRequired,
-		time: PropTypes.string.isRequired,
-	}).isRequired,
 };
 
 export default TaskCard;
