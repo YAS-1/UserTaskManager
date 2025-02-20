@@ -222,7 +222,7 @@ const HomePage = () => {
 														border={"2px solid"}
 														fontSize={"xl"}
 														borderRadius={"8px"}>
-														Cancel
+														
 													</Button>
 												</DialogActionTrigger>
 												<Button
