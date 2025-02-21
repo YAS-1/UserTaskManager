@@ -7,9 +7,9 @@ import SignUpPage from "./pages/SignUpPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 
 
-
 function App() {
 	return (
+		<>
 		<Box
 			minW={"100vw"}
 			minH={"100vh"}
@@ -22,6 +22,7 @@ function App() {
 				<Route path='/home' element={<HomePage />} />
 			</Routes>
 		</Box>
+		</>
 	);
 }
 

@@ -6,7 +6,7 @@ export const tasks = [
         description: "This is task 1",
         category:"Personal",
         due: "15-01-2025",
-        time: "02:20"
+        time: "02:10"
     },
     {
         id: 2,
@@ -22,7 +22,7 @@ export const tasks = [
         description: "This is task 3",
         category:"Personal",
         due: "15-01-2025",
-        time: "02:20"
+        time: "02:30"
     },
     {
         id: 4,
@@ -30,6 +30,6 @@ export const tasks = [
         description: "This is task 4",
         category:"Academic",
         due: "15-01-2025", 
-        time: "02:20"
+        time: "02:40"
     }
 ]
