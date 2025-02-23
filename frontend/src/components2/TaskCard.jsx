@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import {
 	Box,
 	Text,
@@ -27,17 +28,24 @@ import {
 
 const TaskCard = ({ task }) => {
 	const [isCompleted, setIsCompleted] = useState(false);
-
-	const Tasks = {
-		title: "task1",
-		description: "Clean",
-		category: "Personal",
-		dueDate: "2025-01-01",
-		time: "01:21",
-	};
+	const [formData, setFormData] = useState({
+		title: task.title,
+		description: task.description,
+		category: task.category,
+		dueDate: task.due,
+		time: task.time,
+	});
 
 	const handleCheckboxClick = () => {
 		setIsCompleted(!isCompleted); // Toggle the completed state
+	};
+
+	const handleInputChange = (e) => {
+		const { name, value } = e.target;
+		setFormData((prev) => ({
+			...prev,
+			[name]: value,
+		}));
 	};
 
 	return (
@@ -103,7 +111,7 @@ const TaskCard = ({ task }) => {
 											<DialogContent>
 												<DialogHeader>
 													<DialogTitle fontWeight={"bold"} fontSize={"xl"}>
-														Create new Task
+														Update Task
 													</DialogTitle>
 												</DialogHeader>
 												<DialogBody>
@@ -120,7 +128,8 @@ const TaskCard = ({ task }) => {
 															fontSize={"lg"}
 															color={"whiteAlpha.700"}
 															name='title'
-															value={Tasks.title}
+															value={formData.title}
+															onChange={handleInputChange}
 															required
 														/>
 														<Textarea
@@ -135,7 +144,8 @@ const TaskCard = ({ task }) => {
 															fontSize={"lg"}
 															color={"whiteAlpha.700"}
 															name='description'
-															value={Tasks.description}
+															value={formData.description}
+															onChange={handleInputChange}
 															required
 														/>
 														<HStack>
@@ -151,7 +161,8 @@ const TaskCard = ({ task }) => {
 																fontSize={"lg"}
 																color={"whiteAlpha.700"}
 																name='dueDate'
-																value={Tasks.dueDate}
+																value={formData.dueDate}
+																onChange={handleInputChange}
 																required
 															/>
 															<Input
@@ -166,7 +177,8 @@ const TaskCard = ({ task }) => {
 																fontSize={"lg"}
 																color={"whiteAlpha.700"}
 																name='time'
-																value={Tasks.time}
+																value={formData.time}
+																onChange={handleInputChange}
 																required
 															/>
 														</HStack>
@@ -182,7 +194,8 @@ const TaskCard = ({ task }) => {
 															fontSize={"lg"}
 															color={"whiteAlpha.700"}
 															name='category'
-															value={Tasks.category}
+															value={formData.category}
+															onChange={handleInputChange}
 															required
 														/>
 													</VStack>
@@ -236,6 +249,16 @@ const TaskCard = ({ task }) => {
 			</VStack>
 		</div>
 	);
+};
+
+TaskCard.propTypes = {
+	task: PropTypes.shape({
+		title: PropTypes.string.isRequired,
+		description: PropTypes.string.isRequired,
+		category: PropTypes.string.isRequired,
+		due: PropTypes.string.isRequired,
+		time: PropTypes.string.isRequired,
+	}).isRequired,
 };
 
 export default TaskCard;
