@@ -5,6 +5,7 @@ import { connectDB } from './config/db.js';
 
 import authRoutes from './routes/user.routes.js';
 import Taskrouter from './routes/tasks.routes.js';
+
 const app = express();
 
 dotenv.config();
