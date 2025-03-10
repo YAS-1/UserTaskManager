@@ -8,16 +8,11 @@ function SignUpPage() {
     <Flex justify={"center"} align={"center"} paddingY={"30px"}>
         <Box minW={"80vw"} overflow={"hidden"} padding={"10px"}>
             <HStack gap={"0px"}>
-                <Box border={"solid"} rounded={"xl"} borderColor={"blue.50"} minW={"1/2"} minH={"550px"} bgGradient="to-b"gradientFrom={"blue.200"}gradientVia={"blue.300"}gradientTo={"blue.400"} paddingX={"50px"} paddingY={"50px"}>
+                <Box minW={"1/2"} minH={"550px"} paddingX={"50px"} paddingY={"50px"}>
                         <Box paddingY={"50px"} border={"solid"} paddingX={"20px"} borderWidth={"1px"} rounded={"xl"} bgGradient="to-r" gradientFrom={"whiteAlpha.200"}gradientTo={"blue.200"}>
-                                <Heading as={"h1"} display={{base:"none",md:"none", lg:"block"}} fontSize={{base:"hidden", sm:"80px", lg:"100px"}} fontWeight={"semibold"}>
-                                        Task<Text  fontSize={{base:"sm", sm:"80px", lg:"100px"}} color={"black"} fontWeight={"semibold"}>Manager.</Text>
+                                <Heading as={"h1"} display={{base:"none",md:"none", lg:"block"}} fontSize={{base:"hidden", sm:"80px", lg:"100px"}} fontWeight={"semibold"} color={"black"}>
+                                        ToDos
                                 </Heading>
-                                <Box padding={"20px"} marginTop={"25px"}>
-                                    <Text fontSize={{base:"x-small" , sm:"lg", lg:"2xl"}} fontFamily={"monospace"} color={"black"} fontWeight={"semibold"}>
-                                        Your very own task assistant
-                                    </Text>
-                                </Box>
                         </Box>
                 </Box>
                 <Box border={"solid"} rounded={"xl"} minW={"1/2"} minH={"550px"} bgColor={"white"} paddingY={"50px"} borderColor={"blue.50"}>

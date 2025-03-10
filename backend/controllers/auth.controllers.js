@@ -45,11 +45,7 @@ export const signup = async (req, res) =>{
             await newUser.save();
 
             res.status(201).json({
-                message: "User created successfully",
-                _id: newUser._id,
-                fullName: newUser.fullName,
-                username: newUser.username,
-                email: newUser.email,
+                message: "User created successfully"
             });
         }
         else{
@@ -82,11 +78,7 @@ export const login = async (req, res) => {
         generateTokenAndSetCookie(user._id, res); // The generated token is used to authenticate the user
 
         res.status(200).json({
-            message: "Login successful",
-            _id: user._id,
-            fullName: user.fullName,
-            username: user.username,
-            email: user.email,
+            message: "Login successful"
         });
     }
     catch(error){

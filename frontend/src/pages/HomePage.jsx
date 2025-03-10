@@ -124,7 +124,7 @@ const HomePage = () => {
 									<DialogContent>
 										<DialogHeader>
 											<DialogTitle fontWeight={"bold"} fontSize={"xl"}>
-												Create new Task
+												Create new Todo
 											</DialogTitle>
 										</DialogHeader>
 										<DialogBody>
